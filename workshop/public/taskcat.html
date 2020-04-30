@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<html lang="en" class="js csstransforms3d">
+<head>
+  <meta charset="utf-8">
+  <meta property="og:title" content="My AWS Workshop" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="generator" content="Hugo 0.69.0" />
+  <meta name="description" content="DevSecOps on AWS">
+<meta name="author" content="Eduardo Janicas">
+
+  <link rel="shortcut icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
+<link rel="icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
+
+  <title>Testing a Template :: My AWS Workshop</title>
+
+  
+  <link href="./css/nucleus.css" rel="stylesheet">
+  <link href="./css/fontawesome-all.min.css" rel="stylesheet">
+  <link href="./css/hybrid.css" rel="stylesheet">
+  <link href="./css/featherlight.min.css" rel="stylesheet">
+  <link href="./css/perfect-scrollbar.min.css" rel="stylesheet">
+  <link href="./css/auto-complete.css" rel="stylesheet">
+  <link href="./css/atom-one-dark-reasonable.css" rel="stylesheet">
+  <link href="./css/theme.css" rel="stylesheet">
+  <link href="./css/hugo-theme.css" rel="stylesheet">
+  
+  <link href="./css/theme-aws.css" rel="stylesheet">
+  
+
+  <script src="./js/jquery-3.3.1.min.js"></script>
+
+  <style>
+    :root #header + #content > #left > #rlblock_left{
+        display:none !important;
+    }
+    
+      :not(pre) > code + span.copy-to-clipboard {
+          display: none;
+      }
+    
+  </style>
+  
+</head>
+
+<body class="" data-url="/taskcat.html">
+  <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div>
+    <a href="./" title="Go home">
+        <img style="vertical-align:middle" src="./images/logo.png" height="70px" />
+    </a>
+</div>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="./js/lunr.min.js"></script>
+<script type="text/javascript" src="./js/auto-complete.js"></script>
+<script type="text/javascript">
+    
+        var baseurl = "";
+    
+</script>
+<script type="text/javascript" src="./js/search.js"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/introduction.html" title="Introduction" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./introduction.html">
+          <b> </b>Introduction
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/clone.html" title="Clone Repository" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./clone.html">
+          <b></b>Clone Repository
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/secrets.html" title="Store Secrets" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./secrets.html">
+          <b> </b>Store Secrets
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/launch.html" title="Launch Stacks" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./launch.html">
+          <b> </b>Launch Stacks
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/validate.html" title="Validating a Template" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./validate.html">
+          <b> </b>Validating a Template
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/cfn-nag.html" title="Linting a Template" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./cfn-nag.html">
+          <b> </b>Linting a Template
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/taskcat.html" title="Testing a Template" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="./taskcat.html">
+          <b> </b>Testing a Template
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/config.html" title="Enforcing Compliance" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./config.html">
+          <b> </b>Enforcing Compliance
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/detective.html" title="Root Cause Analysis" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./detective.html">
+          <b> </b>Root Cause Analysis
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/conclusion.html" title="Conclusion" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./conclusion.html">
+          <b> </b>Conclusion
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <left>
+
+    <h5 class="copyright">&copy; 2020 Amazon Web Services, Inc. or its Affiliates. All rights reserved.<h5>
+
+</left>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+  <section id="body">
+    <div id="overlay"></div>
+    <div class="padding highlightable">
+      
+      <div>
+        <div id="top-bar">
+          
+          
+          
+          
+          <div id="top-github-link">
+            <a class="github-link" title='Edit this page' href="https://code.amazon.com/packages/Aws-workshop-template/blobs/master/--/workshop/content/taskcat/_index.md"
+              target="blank">
+              <i class="fas fa-code-branch"></i>
+              <span id="top-github-link-text">Edit this page</span>
+            </a>
+          </div>
+          
+          
+          
+          <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                <i class="fa fa-bars"></i>
+              </a>
+            </span>
+            
+            <span class="links">
+              
+          
+          
+          
+          
+          
+          
+          <a href='./'>DevSecOps on AWS</a> > Testing a Template
+          
+          
+          
+          
+            </span>
+          </div>
+          
+        </div>
+      </div>
+      
+
+      
+      <div id="chapter">
+        
+        <div id="body-inner">
+          <h1>Testing a Template</h1>
+          
+          
+
+
+
+	<p>We passed our validate stage! The vpc ID <code>default-vpc</code> does not exist. We can leave it out of the security group, as the default works just fine.</p>
+<p><a href="https://github.com/aws-quickstart/taskcat">TaskCat</a> is an open source tool developed by the AWS Quick Start team to automate the testing of AWS CloudFormation templates. It tests an AWS CloudFormation template by deploying it in multiple AWS Regions simultaneously and generates a report with a pass/fail result for each Region. You can customize the tests through a test config file. TaskCat is implemented in Python and available as a Docker container and pip module.</p>
+<p><img src="https://raw.githubusercontent.com/aws-quickstart/taskcat/master/assets/docs/images/logo.png" alt="Taskcat"></p>
+<p>To run the tests, TaskCat requires a configuration file named taskcat.yml. The taskcat.yml file contains two high-level mappings: global and tests. The global mapping defines the global configurations of the project:</p>
+<ul>
+<li>owner – Project owner’s email address</li>
+<li>qsname – Name of the project; must be same as the project folder name</li>
+<li>regions – All the regions where tests need to be executed</li>
+<li>reporting – To generate test report with logs from each test execution</li>
+</ul>
+<p>The tests mapping defines test scenarios that will be performed by TaskCat. You can define multiple test scenarios in the tests mapping, and each test scenario must specify a parameter input file name and an AWS CloudFormation template file name. Optionally, you can define the AWS Regions in which the test needs to be executed. This Region list will override the global Region list. For example, if your AWS CloudFormation template creates AWS resources that are not available in all Regions, you need to override the global Region list and specify only those Regions where those resources are supported.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">project</span>:
+  <span style="color:#66d9ef">name</span>: wordpress-single-instance
+  <span style="color:#66d9ef">regions</span>:
+    - eu-west<span style="color:#ae81ff">-1</span>
+<span style="color:#66d9ef">tests</span>:
+  <span style="color:#66d9ef">default</span>:
+    <span style="color:#66d9ef">template</span>: wordpress/wordpress-single-instance.yaml
+</code></pre></div><p>TaskCat performs multiple actions, such as template validation, parameter validation, and staging content into an Amazon Simple Storage Service (Amazon S3) bucket, before launching the AWS CloudFormation stack. It launches the stack in the defined Regions, simultaneously. And it regularly polls the AWS CloudFormation stack status to check if the stack creation is finished. After the stack has been successfully created, TaskCat deletes it. How much time TaskCat takes to finish the testing depends on how many tests you have defined in your TaskCat configuration file and how long each stack creation and deletion takes. After the TaskCat run is completed, it generates a report in HTML format in the directory from where you are running the TaskCat command.</p>
+
+<div class="notices tip" ><p>To get the best results when testing your templates with TaskCat, it’s helpful to understand three primary files that TaskCat uses: Standard parameter file, Override parameter files and the configuration file. <a href="https://aws.amazon.com/blogs/infrastructure-and-automation/a-deep-dive-into-testing-with-taskcat/">Take a look</a> at each of these files in more detail, and at how you can use them to create and configure the test cases for your CloudFormation templates.</p>
+</div>
+
+<p><img src="./images/soaktest.png" alt="soaktest"></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+            </div> 
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="./cfn-nag.html" title="Linting a Template"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="./config.html" title="Enforcing Compliance" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="./js/clipboard.min.js"></script>
+    <script src="./js/perfect-scrollbar.min.js"></script>
+    <script src="./js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="./js/jquery.sticky.js"></script>
+    <script src="./js/featherlight.min.js"></script>
+    <script src="./js/html5shiv-printshiv.min.js"></script>
+    <script src="./js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="./js/modernizr.custom-3.6.0.js"></script>
+    <script src="./js/learn.js"></script>
+    <script src="./js/hugo-learn.js"></script>
+
+    <link href="./mermaid/mermaid.css" rel="stylesheet" />
+    <script src="./mermaid/mermaid.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+  </body>
+</html>
