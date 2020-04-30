@@ -1,8 +1,8 @@
-# workshop-sample
+# DevSecOps on AWS
 
 This library is licensed under the MIT-0 License. See the LICENSE file.
 
-This project allows you to scaffold a workshop using a AWS-styled Hugo theme similar to those available at [cdkworkshop.com](https://cdkworkshop.com/), [eksworkshop.com](https://eksworkshop.com/), or [ecsworkshop.com](https://ecsworkshop.com/).
+In this workshop we will build a pipeline for a sample WordPress site in a stack. We will explore how to validate, lint and test templates, and dive deeper in tools that help you enforce compliance and network analysis, together with your development pipeline, for a full DevSecOps CI/CD.
 
 ```bash
 .
@@ -26,13 +26,6 @@ This project allows you to scaffold a workshop using a AWS-styled Hugo theme sim
 1. [Clone this repository](https://help.github.com/articles/fork-a-repo/).
 2. [Install Hugo locally](https://gohugo.io/overview/quickstart/).
 
-## Create your project
-
-If you haven't already, make a copy of this entire directory and rename it something descriptive, similar to the title of your workshop.
-
-```bash
-cp -R Aws-workshop-template/ my-first-worshop/
-```
 
 ## What's Included
 
@@ -48,7 +41,7 @@ This project the following folders:
 All command line directions in this documentation assume you are in the `workshop` directory. Navigate there now, if you aren't there already.
 
 ```bash
-cd my-first-workshop/workshop
+cd workshop
 ```
 
 ## Create your first chapter page
