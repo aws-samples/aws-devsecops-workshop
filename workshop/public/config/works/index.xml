@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>How AWS Config Works on DevSecOps on AWS</title>
+    <link>/config/works.html</link>
+    <description>Recent content in How AWS Config Works on DevSecOps on AWS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 27 May 2020 13:39:21 +0100</lastBuildDate><atom:link href="/config/works/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

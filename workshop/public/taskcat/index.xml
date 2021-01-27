@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Testing a Template on DevSecOps on AWS</title>
+    <link>/taskcat.html</link>
+    <description>Recent content in Testing a Template on DevSecOps on AWS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 15 Apr 2020 14:33:32 +0100</lastBuildDate><atom:link href="/taskcat/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

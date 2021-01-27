@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-05-29T14:15:42+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/introduction.html</loc>
+    <lastmod>2019-10-30T17:50:15-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/clone.html</loc>
+    <lastmod>2019-11-01T16:13:49-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/secrets.html</loc>
+    <lastmod>2019-10-30T17:50:15-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/launch.html</loc>
+    <lastmod>2019-10-30T17:50:15-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/validate.html</loc>
+    <lastmod>2020-04-15T14:30:38+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/cfn-nag.html</loc>
+    <lastmod>2020-04-15T14:32:10+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/taskcat.html</loc>
+    <lastmod>2020-04-15T14:33:32+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/config/soak.html</loc>
+    <lastmod>2020-05-29T14:15:42+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/config.html</loc>
+    <lastmod>2020-04-15T14:34:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/config/works.html</loc>
+    <lastmod>2020-05-27T13:39:21+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/config/rules.html</loc>
+    <lastmod>2020-05-27T13:43:07+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/conclusion.html</loc>
+    <lastmod>2019-10-30T17:50:15-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags.html</loc>
+  </url>
+  
+</urlset>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DevSecOps on AWS</title>
+    <link>/</link>
+    <description>Recent content on DevSecOps on AWS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 29 May 2020 14:15:42 +0100</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

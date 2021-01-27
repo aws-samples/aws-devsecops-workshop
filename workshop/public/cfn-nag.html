@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<html lang="en" class="js csstransforms3d">
+<head>
+  <meta charset="utf-8">
+  <meta property="og:title" content="DevSecOps on AWS" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="generator" content="Hugo 0.78.1" />
+  <meta name="description" content="DevSecOps on AWS">
+<meta name="author" content="Eduardo Janicas">
+
+  <link rel="shortcut icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
+<link rel="icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
+
+  <title>Linting a Template :: DevSecOps on AWS</title>
+
+  
+  <link href="./css/nucleus.css" rel="stylesheet">
+  <link href="./css/fontawesome-all.min.css" rel="stylesheet">
+  <link href="./css/hybrid.css" rel="stylesheet">
+  <link href="./css/featherlight.min.css" rel="stylesheet">
+  <link href="./css/perfect-scrollbar.min.css" rel="stylesheet">
+  <link href="./css/auto-complete.css" rel="stylesheet">
+  <link href="./css/atom-one-dark-reasonable.css" rel="stylesheet">
+  <link href="./css/theme.css" rel="stylesheet">
+  <link href="./css/hugo-theme.css" rel="stylesheet">
+  
+  <link href="./css/theme-aws.css" rel="stylesheet">
+  
+
+  <script src="./js/jquery-3.3.1.min.js"></script>
+
+  <style>
+    :root #header + #content > #left > #rlblock_left{
+        display:none !important;
+    }
+    
+      :not(pre) > code + span.copy-to-clipboard {
+          display: none;
+      }
+    
+  </style>
+  
+</head>
+
+<body class="" data-url="./cfn-nag.html">
+  <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div>
+    <a href="./" title="Go home">
+        <img style="vertical-align:middle" src="./images/logo.png" height="70px" />
+    </a>
+</div>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="./js/lunr.min.js"></script>
+<script type="text/javascript" src="./js/auto-complete.js"></script>
+<script type="text/javascript">
+    
+        var baseurl = "";
+    
+</script>
+<script type="text/javascript" src="./js/search.js"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/introduction.html" title="Introduction" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./introduction.html">
+          <b> </b>Introduction
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/clone.html" title="Clone Repository" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./clone.html">
+          <b></b>Clone Repository
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/secrets.html" title="Store Secrets" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./secrets.html">
+          <b> </b>Store Secrets
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/launch.html" title="Launch Stacks" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./launch.html">
+          <b> </b>Launch Stacks
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/validate.html" title="Validating a Template" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./validate.html">
+          <b> </b>Validating a Template
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/cfn-nag.html" title="Linting a Template" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="./cfn-nag.html">
+          <b> </b>Linting a Template
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/taskcat.html" title="Testing a Template" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./taskcat.html">
+          <b> </b>Testing a Template
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/config.html" title="Enforcing Compliance" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./config.html">
+          <b> </b>Enforcing Compliance
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/config/soak.html" title="Soak Testing Environment" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./config/soak.html">
+          <b> </b>Soak Testing Environment
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/config/works.html" title="How AWS Config Works" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./config/works.html">
+          <b> </b>How AWS Config Works
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/config/rules.html" title="Evaluating Resources with Rules" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./config/rules.html">
+          <b> </b>Evaluating Resources with Rules
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/conclusion.html" title="Conclusion and Clean Up" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./conclusion.html">
+          <b> </b>Conclusion and Clean Up
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <left>
+
+    <h5 class="copyright">&copy; 2020 Amazon Web Services, Inc. or its Affiliates. All rights reserved.<h5>
+
+</left>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+  <section id="body">
+    <div id="overlay"></div>
+    <div class="padding highlightable">
+      
+      <div>
+        <div id="top-bar">
+          
+          
+          
+          
+          <div id="top-github-link">
+            <a class="github-link" title='Edit this page' href="https://github.com/aws-samples/aws-devsecops-workshop/tree/master/workshop/content/cfn-nag/_index.md"
+              target="blank">
+              <i class="fas fa-code-branch"></i>
+              <span id="top-github-link-text">Edit this page</span>
+            </a>
+          </div>
+          
+          
+          
+          <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                <i class="fa fa-bars"></i>
+              </a>
+            </span>
+            
+            <span class="links">
+              
+          
+          
+          
+          
+          
+          
+          <a href='./'>DevSecOps on AWS</a> > Linting a Template
+          
+          
+          
+          
+            </span>
+          </div>
+          
+        </div>
+      </div>
+      
+
+      
+      <div id="chapter">
+        
+        <div id="body-inner">
+          <h1>Linting a Template</h1>
+          
+          
+
+
+
+	<p>Our Security group defined on the <code>wordpress/wordpress-single-instance.yaml</code> file on line 141 is too permissive because we have a range of ports open. Let’s narrow the range to only the one port we need for Wordpress to work. In the code sample below, you will note the Security Group resource restricts to only port 80.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">WebServerSecurityGroup</span>:
+  <span style="color:#f92672">Type</span>: <span style="color:#ae81ff">AWS::EC2::SecurityGroup</span>
+  <span style="color:#f92672">Properties</span>:
+    <span style="color:#f92672">GroupDescription</span>: <span style="color:#e6db74">&#34;Enable HTTP access via port 80 locked down to the load balancer + SSH access&#34;</span>
+    <span style="color:#f92672">VpcId</span>: <span style="color:#e6db74">&#34;default-vpc&#34;</span>
+    <span style="color:#f92672">SecurityGroupIngress</span>:
+      - <span style="color:#f92672">CidrIp</span>: <span style="color:#ae81ff">0.0.0.0</span><span style="color:#ae81ff">/0</span>
+        <span style="color:#f92672">FromPort</span>: <span style="color:#ae81ff">80</span>
+        <span style="color:#f92672">IpProtocol</span>: <span style="color:#ae81ff">tcp</span>
+        <span style="color:#f92672">ToPort</span>: <span style="color:#ae81ff">80</span>
+</code></pre></div><p>Commit the changes and push it to CodeCommit:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add wordpress/wordpress-single-instance.yaml
+git commit -m <span style="color:#e6db74">&#34;Closed down SG to port 80&#34;</span> 
+git push AWSCodeCommit master 
+</code></pre></div><p>The <a href="https://github.com/stelligent/cfn_nag"><code>cfn-nag</code> tool</a> parses a collection of CloudFormation templates and applies rules to find code patterns that could lead to insecure infrastructure.  The results of the tool include the logical resource identifiers for violating resources and an explanation of what rule has been violated.</p>
+<p><img src="https://github.com/stelligent/cfn_nag/raw/master/logo.png?raw=true" alt="cfn-nag"></p>
+<p>While there are quite a number of particular rules the tool will attempt to match, the rough categories are:</p>
+<ul>
+<li>IAM and resource policies (S3 Bucket, SQS, etc.)
+<ul>
+<li>Matches policies that are overly permissive in some way (e.g. wildcards in actions or principals)</li>
+</ul>
+</li>
+<li>Security Group ingress and egress rules
+<ul>
+<li>Matches rules that are overly liberal (e.g. an ingress rule open to 0.0.0.0/0, port range 1-65535 is open)</li>
+</ul>
+</li>
+<li>Access Logs
+<ul>
+<li>Looks for access logs that are not enabled for applicable resources (e.g. Elastic Load Balancers and CloudFront Distributions)</li>
+</ul>
+</li>
+<li>Encryption
+<ul>
+<li>(Server-side) encryption that is not enabled or enforced for applicable resources (e.g. EBS volumes or for PutObject calls on an S3 bucket)</li>
+</ul>
+</li>
+</ul>
+<p>All the rules are considered either warnings or failures. Any discovered failures will result in a non-zero exit code, while warnings will not. In the context of a delivery pipeline, <code>cfn-nag</code> should likely stop the pipeline in the case it finds failures, but perhaps not stop the pipeline in the case of just warnings.
+Which rules are considered warnings and which are considered errors is a little “loose” or subjective.</p>
+
+<div class="notices tip" ><p>The cfn-nag tool includes rules that apply universally across environments and enterprises (you can still filter which ones you want to suppress).  That said, the product supports the <a href="https://github.com/stelligent/cfn_nag/blob/master/custom_rule_development.md">development of custom rules</a> to allow enterprise-specific rules for compliance and security controls.</p>
+</div>
+
+<p>However, the execution is still failing. There is one thing left to solve. Can you guess what the problem is?</p>
+<p><img src="./images/taillogs-3.png" alt="taillogs-3"></p>
+<pre><code class="language-none" data-lang="none">2020-04-20 13:21:59.423000+00:00  CREATE_FAILED       AWS::EC2::SecurityGroup     WebServerSecurityGroup                                                   The vpc ID 'default-vpc' does not exist (Service: AmazonEC2; Status Code: 400; Error Code: InvalidVpcID.NotFound; Request ID: eb225981-a162-4555-bf51-4cfe66056c20)
+</code></pre>
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+            </div> 
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="./validate.html" title="Validating a Template"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="./taskcat.html" title="Testing a Template" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="./js/clipboard.min.js"></script>
+    <script src="./js/perfect-scrollbar.min.js"></script>
+    <script src="./js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="./js/jquery.sticky.js"></script>
+    <script src="./js/featherlight.min.js"></script>
+    <script src="./js/html5shiv-printshiv.min.js"></script>
+    <script src="./js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="./js/modernizr.custom-3.6.0.js"></script>
+    <script src="./js/learn.js"></script>
+    <script src="./js/hugo-learn.js"></script>
+
+    <link href="./mermaid/mermaid.css" rel="stylesheet" />
+    <script src="./mermaid/mermaid.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+  </body>
+</html>
