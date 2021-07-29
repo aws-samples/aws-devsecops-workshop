@@ -30,7 +30,7 @@ git push AWSCodeCommit master
 
 [TaskCat](https://github.com/aws-quickstart/taskcat) is a tool that tests AWS CloudFormation templates. It deploys your AWS CloudFormation template in multiple AWS Regions and generates a report with a pass/fail grade for each region. You can specify the regions and number of Availability Zones you want to include in the test, and pass in parameter values from your AWS CloudFormation template. taskcat is implemented as a Python class that you import, instantiate, and run.
 
-![Taskcat](https://raw.githubusercontent.com/aws-quickstart/taskcat/master/assets/docs/images/logo.png)
+![Taskcat](/images/taskcat.png)
 
 Taskcat uses two configuration files: **Global config** and **Project config**. The global config file provides global settings that become defaults for all projects. It is located in user’s home-directory `~/.taskcat.yml`. The project config file provides project-specific configurations. The project config file is located in the root of your project folder `<PROJECT_ROOT>/.taskcat.yml`
 

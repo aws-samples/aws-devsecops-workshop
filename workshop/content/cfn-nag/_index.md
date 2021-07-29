@@ -31,7 +31,7 @@ git push AWSCodeCommit master
 
 The [`cfn-nag` tool](https://github.com/stelligent/cfn_nag) parses a collection of CloudFormation templates and applies rules to find code patterns that could lead to insecure infrastructure.  The results of the tool include the logical resource identifiers for violating resources and an explanation of what rule has been violated.
 
-![cfn-nag](https://github.com/stelligent/cfn_nag/raw/master/logo.png?raw=true)
+![cfn-nag](/images/logo.png)
 
 While there are quite a number of particular rules the tool will attempt to match, the rough categories are:
  - IAM and resource policies (S3 Bucket, SQS, etc.)
